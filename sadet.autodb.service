@@ -5,7 +5,7 @@ Description=Sadet auto db
 WorkingDirectory=/home/pi/sadet.output.d/
 ExecStart=python3 run.py
 Restart=always
-RestartSec=900
+RestartSec=28800
 
 [Install]
 WantedBy=default.target
