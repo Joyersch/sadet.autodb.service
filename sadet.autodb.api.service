@@ -1,0 +1,11 @@
+[Unit]
+Description=Sadet auto db api
+
+[Service]
+WorkingDirectory=/home/pi/sadet.autodb/publish/
+ExecStart=/bin/sadet.autodb.api.d/sadet.autodb.api
+Restart=always
+RestartSec=900
+
+[Install]
+WantedBy=default.target
