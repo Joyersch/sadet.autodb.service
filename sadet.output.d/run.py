@@ -20,7 +20,7 @@ for line in sadet:
     data = line.split("=")
 
     if firstLine == True:
-        queries.append(f"INSERT INTO data (AppId, Completion, IsAvarage) VALUES (-1, {data[1]}, true)");
+        queries.append(f"INSERT INTO data (AppId, Completion, IsAverage) VALUES (-1, {data[1]}, true)");
         firstLine=False
         continue
     
@@ -35,7 +35,7 @@ for line in sadet:
     name = data[1].replace("'","''")
     comp = data[2].rstrip()
     queries.append(f"INSERT INTO games VALUES ({id}, '{name}') ON CONFLICT (appid) DO UPDATE SET name='{name}'")
-    queries.append(f"INSERT INTO data (AppId, Completion, IsAvarage) VALUES ({id}, {comp}, false)")
+    queries.append(f"INSERT INTO data (AppId, Completion, IsAverage) VALUES ({id}, {comp}, false)")
 
 con = psycopg2.connect(
     host = "localhost",
