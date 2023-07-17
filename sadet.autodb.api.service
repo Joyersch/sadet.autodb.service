@@ -3,7 +3,7 @@ Description=Sadet auto db api
 
 [Service]
 WorkingDirectory=/home/pi/sadet.autodb/publish/
-ExecStart=/bin/sadet.autodb.api.d/sadet.autodb.api
+ExecStart=/bin/sadet.autodb.api.d/sadet.autodb.api --urls "http://0.0.0.0:10875"
 Restart=always
 RestartSec=900
 
